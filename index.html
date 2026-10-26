@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Smart Home Data Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>SmartHome</h1>
+            <p>IoT-Based Smart Home Data Management</p>
+        </div>
+        <span class="status" id="storageStatus">Local storage ready</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <h2>Smart Home Dashboard</h2>
+                <p>Monitor sensor data, detect unusual readings,
+                   and estimate electricity usage.</p>
+            </div>
+            <button id="addReadingBtn">+ Add New Reading</button>
+        </section>
+
+        <section class="cards">
+            <article class="card">
+                <p>Temperature</p>
+                <h2><span id="temperature">--</span> °C</h2>
+                <span class="description">Room temperature</span>
+            </article>
+
+            <article class="card">
+                <p>Humidity</p>
+                <h2><span id="humidity">--</span> %</h2>
+                <span class="description">Room humidity</span>
+            </article>
+
+            <article class="card">
+                <p>Current Power</p>
+                <h2><span id="power">--</span> W</h2>
+                <span class="description">Estimated power usage</span>
+            </article>
+
+            <article class="card">
+                <p>Predicted Daily Energy</p>
+                <h2><span id="prediction">--</span> kWh</h2>
+                <span class="description">Estimate based on recent readings</span>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>System Alerts</h2>
+            <div id="alerts" class="alerts">
+                No alerts yet.
+            </div>
+            <p class="hint">
+                Demo alert thresholds: temperature above 35°C
+                or power usage above 2000 W.
+            </p>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Sensor Data History</h2>
+                    <p>Readings saved in this browser</p>
+                </div>
+                <button id="clearHistoryBtn" class="secondary">
+                    Clear History
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Temperature</th>
+                            <th>Humidity</th>
+                            <th>Power</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <tr>
+                            <td colspan="4">Loading data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>How This Prototype Works</h2>
+            <ul>
+                <li>JavaScript generates simulated sensor readings.</li>
+                <li>Browser localStorage saves the readings.</li>
+                <li>The dashboard detects high temperature and power.</li>
+                <li>Recent power readings estimate daily energy usage.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>
+                Student Project Demo | Simulated IoT Data |
+                No physical sensors connected
+            </p>
+        </footer>
+    </main>
+</body>
+</html>
